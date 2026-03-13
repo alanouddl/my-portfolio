@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header>
+    <div class="container">
+      <h1>My Portfolio</h1>
+      <button id="menu-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+      <nav id="primary-nav" role="navigation">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="about">
+      <h2>About Me</h2>
+      <p>Short intro...</p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <ul class="project-list">
+        <li class="project-item">
+          <img src="images/project1.png" alt="Screenshot of Project One">
+          <h3>Project One</h3>
+          <p>Short description...</p>
+        </li>
+        <!-- more projects -->
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>How to reach me...</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Your Name</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
