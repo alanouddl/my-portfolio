@@ -9,10 +9,13 @@
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
   <header>
-    <div class="container">
-      <h1>My Portfolio</h1>
-      <button id="menu-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
-      <nav id="primary-nav" role="navigation">
+    <div class="container header-row">
+      <h1 class="site-title">Alanoud</h1>
+      <div class="header-controls">
+        <button id="theme-toggle" aria-pressed="false" title="Toggle theme">🌗</button>
+        <button id="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">☰</button>
+      </div>
+      <nav id="primary-nav" class="primary-nav" role="navigation" aria-label="Primary">
         <ul>
           <li><a href="#about">About</a></li>
           <li><a href="#projects">Projects</a></li>
@@ -23,32 +26,107 @@
   </header>
 
   <main id="main">
-    <section id="about">
-      <h2>About Me</h2>
-      <p>Short intro...</p>
+    <section id="hero" class="hero">
+      <div class="container">
+        <h2 class="hero-title">Hi — I'm Alanoud</h2>
+        <p class="hero-sub">I build accessible, responsive websites with clean UI and small, useful JavaScript features.</p>
+        <p class="hero-cta">
+          <a class="btn" href="#projects">See my work</a>
+          <a class="btn btn-outline" href="#contact">Get in touch</a>
+        </p>
+      </div>
     </section>
 
-    <section id="projects">
-      <h2>Projects</h2>
-      <ul class="project-list">
-        <li class="project-item">
-          <img src="images/project1.png" alt="Screenshot of Project One">
-          <h3>Project One</h3>
-          <p>Short description...</p>
-        </li>
-        <!-- more projects -->
+    <section id="about" class="container about">
+      <h2>About Me</h2>
+      <p>I'm a front-end developer focusing on building accessible, responsive portfolio sites. I enjoy learning new tools and improving usability for all users. My current focus is semantic HTML, CSS layout (Flexbox and Grid), and vanilla JavaScript for interactive features.</p>
+      <ul class="skills">
+        <li>HTML &amp; Accessibility</li>
+        <li>CSS (Flexbox, Grid, Responsive)</li>
+        <li>JavaScript (ES6+)</li>
+        <li>Git &amp; Deployment</li>
       </ul>
     </section>
 
-    <section id="contact">
+    <section id="projects" class="container">
+      <h2>Selected Projects</h2>
+      <ul class="project-list">
+        <li class="project-item" data-project-id="p1">
+          <img src="images/project1.png" alt="Screenshot of Recipe Finder app">
+          <div class="project-body">
+            <h3>Recipe Finder</h3>
+            <p>A small app to search recipes by ingredient. Shows how I structure search and results with accessible markup and keyboard support.</p>
+            <p class="tech">HTML • CSS • JavaScript</p>
+            <p class="project-actions">
+              <a class="btn" href="#" aria-label="Open Recipe Finder demo">Live</a>
+              <a class="btn btn-outline" href="#" aria-label="View Recipe Finder code">Code</a>
+              <button class="btn btn-ghost project-details" data-project="p1">Details</button>
+            </p>
+          </div>
+        </li>
+
+        <li class="project-item" data-project-id="p2">
+          <img src="images/project2.png" alt="Screenshot of Personal Blog template">
+          <div class="project-body">
+            <h3>Minimal Blog Template</h3>
+            <p>A responsive blog starter template focusing on typography and readable content layout. Includes mobile-first CSS and accessible navigation.</p>
+            <p class="tech">HTML • CSS</p>
+            <p class="project-actions">
+              <a class="btn" href="#" aria-label="Open Blog demo">Live</a>
+              <a class="btn btn-outline" href="#" aria-label="View Blog code">Code</a>
+              <button class="btn btn-ghost project-details" data-project="p2">Details</button>
+            </p>
+          </div>
+        </li>
+
+        <li class="project-item" data-project-id="p3">
+          <img src="images/project3.png" alt="Screenshot of To-do App">
+          <div class="project-body">
+            <h3>Accessible To‑Do</h3>
+            <p>A small to‑do app demonstrating keyboard interactions, focus management, and localStorage to persist tasks.</p>
+            <p class="tech">JavaScript • localStorage</p>
+            <p class="project-actions">
+              <a class="btn" href="#" aria-label="Open To‑Do demo">Live</a>
+              <a class="btn btn-outline" href="#" aria-label="View To‑Do code">Code</a>
+              <button class="btn btn-ghost project-details" data-project="p3">Details</button>
+            </p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="contact" class="container contact">
       <h2>Contact</h2>
-      <p>How to reach me...</p>
+      <p>If you'd like to work together or see more, email me at <a href="mailto:alanoud@example.com">alanoud@example.com</a> or find me on <a href="#" aria-label="Link to GitHub">GitHub</a> and <a href="#" aria-label="Link to LinkedIn">LinkedIn</a>.</p>
+      <form class="contact-form" action="#" onsubmit="return false;" aria-label="Contact form">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" required />
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <p><button class="btn" type="submit">Send message</button></p>
+      </form>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2026 Your Name</p>
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Alanoud — Built with semantic HTML, CSS, and vanilla JS.</p>
+    </div>
   </footer>
+
+  <!-- Project details modal -->
+  <div id="project-modal" class="modal" role="dialog" aria-hidden="true" aria-labelledby="modal-title">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close details">✕</button>
+      <h3 id="modal-title">Project details</h3>
+      <div id="modal-body">Loading…</div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
